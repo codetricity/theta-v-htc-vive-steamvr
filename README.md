@@ -55,35 +55,25 @@ I needed to rotate the X axis of the SteamVR rig by 180 degrees in order to get 
 
 ![](doc/img/invert-camera.png)
 
-## Specifying the Correct Webcam
+## Specifying the Correct RICOH THETA V driver
 
-You will need to modify the script to detect the webcam on your system.  In the example below, my THETA V is the sixth webcam that Unity detected.
+You will need to modify the script to detect the webcam on your system.  By default, the script
+will look for `RICOH THETA V 4K`. If you want to use a different resolution or a different
+driver, you will need to modify the script. 
 
-  using UnityEngine;
-  using System.Collections;
+![](doc/img/webcam_name.png)
 
-  public class webCamDetect : MonoBehaviour
-  {
+The script will also display all webcams attached
+to your computer for debugging.
 
-    void Start()
-    {
-      WebCamDevice[] devices = WebCamTexture.devices;
-      Debug.Log("Number of web cams connected: " + devices.Length);
-      for (int i = 0; i < devices.Length; i++)
-      {
-        Debug.Log(i + " " + devices[i].name);
-      }
-      string camName = devices[5].name;
-      Debug.Log("The webcam name is " + camName);
-      Renderer rend = this.GetComponentInChildren<Renderer>();
-      WebCamTexture mycam = new WebCamTexture();
+![](doc/img/webcam-detect.png)
 
-      mycam.deviceName = camName;
-      rend.material.mainTexture = mycam;
+## Height of THETA V
 
-      mycam.Play();
-    }
-  }
+Right now, the height of the scene and the height of 
+the THETA V are not matched to provide a good 
+telepresence experience. I'll run more tests in the 
+future.
 
 ## Fun 
 
