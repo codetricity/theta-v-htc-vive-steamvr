@@ -95,3 +95,14 @@ Thanks to Ricoh for these cool THETA V t-shirts they
 gave out at CES.
 
 ![](doc/img/testing-fun2.png)
+
+## Software Used in This Test
+
+Tests were done with the following:
+
+- Unity 2017.4.0f1 (earlier version should work)
+  - [SteamVR Plugin for Unity](https://assetstore.unity.com/packages/templates/systems/steamvr-plugin-32647)
+- [RICOH THETA V](https://theta360.com/en/about/theta/v.html)
+  - RICOH THETA V firmware 2.11.1 (or higher)
+- [RICOH THETA V live streaming driver 1.0.1](https://theta360.com/en/support/faq/c_06_v/304_1/) 64 bit  - You NEED 1.0.1 or higher to work with Unity
+
