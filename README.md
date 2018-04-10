@@ -53,7 +53,9 @@ Double-click on __theta_v_htc_vive_test.ext__ on your Windows 10 computer.
 ![](doc/img/app-binary.png)
 
 ### Wait for App to Load
+
 The app should load in less than 5 seconds.
+
 ![](doc/img/unity-app.png)
 
 The screen will turn black as the headset adjusts to the THETA V input.
