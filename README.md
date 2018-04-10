@@ -2,7 +2,10 @@
 
 Sample project for using RICOH THETA HTC Vive with SteamVR for telepresence applications.
 
+![](htc-vive-screenshot.png)
+
 The 4K video stream from the THETA V will appear in HTC headset. You can see the controllers, but I am not controlling anything right now.
+
 
 This is based on the [project](https://community.theta360.guide/t/tutorial-live-ricoh-theta-s-dual-fish-eye-for-steamvr-in-unity/938) by [@zimmermegan](https://community.theta360.guide/u/zimmermegan/summary) for the THETA S.
 
