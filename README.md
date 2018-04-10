@@ -6,16 +6,31 @@ Sample project for using RICOH THETA HTC Vive with SteamVR for telepresence appl
 The 4K video stream from the THETA V will appear in HTC headset. 
 
 ## Controllers
-You can see the controllers, but I am not controlling anything right now.
+With the default SteamVR features, you can do the following:
+
+- track both controllers inside of the headset. Position is accurate
+- take screenshots from inside of the headset using the controller buttons
 
 ![](doc/img/htc-vive-screenshot.png)
 
+I am not using the controllers to grab anything right now.
+
+
+## Thanks
+Thanks to the great community of contributors at theta360.guide. 
+
+Special thanks to Ricoh for working with the independent development community and updating the THETA V live streaming driver to work with Unity.
 
 This is based on the [project](https://community.theta360.guide/t/tutorial-live-ricoh-theta-s-dual-fish-eye-for-steamvr-in-unity/938) by [@zimmermegan](https://community.theta360.guide/u/zimmermegan/summary) for the THETA S.
 
+Additional credits:
+
+- [DrustZ](https://community.theta360.guide/u/DrustZ) for the initial hack of the THETA S registry that led to [ZimmerMegan](https://community.theta360.guide/u/zimmermegan/summary) getting Unity to work with the THETA V. This led to Ricoh updating the driver.
+- [joshapplman](https://community.theta360.guide/u/joshappleman/summary) for the technique of using negative scale to reverse the mirroring effect inside of the sphere
+
 
 ## Update RICOH THETA V Live Streaming Driver
-You need 1.0.1 or later. Earlier versions will not work. See [this](https://community.theta360.guide/t/solved-unity-cant-display-theta-v-live-stream-on-windows-10/1688/39) article for info.
+You need 1.0.1 or later. Earlier versions will not work. See [this](https://community.theta360.guide/t/solved-unity-cant-display-theta-v-live-stream-on-windows-10/1688/39) article for info. Note how Ricoh updated the driver is response to our community feedback. :-)  
 
 
 ## Viewing Inside of Sphere
@@ -69,3 +84,14 @@ You will need to modify the script to detect the webcam on your system.  In the 
       mycam.Play();
     }
   }
+
+## Fun 
+
+The cool thing about developing for the VR headset is that you are forced to stand away from your computer to test it. You may even need your friend to help you with the headset.  :-)
+
+![](doc/img/testing-fun.png)
+
+Thanks to Ricoh for these cool THETA V t-shirts they
+gave out at CES.
+
+![](doc/img/testing-fun2.png)
