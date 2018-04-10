@@ -28,6 +28,44 @@ Additional credits:
 - [DrustZ](https://community.theta360.guide/u/DrustZ) for the initial hack of the THETA S registry that led to [ZimmerMegan](https://community.theta360.guide/u/zimmermegan/summary) getting Unity to work with the THETA V. This led to Ricoh updating the driver.
 - [joshapplman](https://community.theta360.guide/u/joshappleman/summary) for the technique of using negative scale to reverse the mirroring effect inside of the sphere
 
+## Use
+Note that this is obviously a skeleton project for
+developers and is not intended for use as a binary.
+However, if you want to check it out quickly, I 
+have included a binary in the directory `release`. There is a Windows 10 64 bit executable. Double click on it.
+
+### Turn on THETA V in Live Streaming Mode
+
+![](doc/img/thetav-livestream.jpg)
+
+### Connect HTC Vive to Your Computer
+
+![](doc/img/htc-vive-connection.png)
+
+### Start SteamVR
+
+![](doc/img/steamvr.png)
+
+### Start Application on Windows
+
+Double-click on __theta_v_htc_vive_test.ext__ on your Windows 10 computer.
+
+![](doc/img/app-binary.png)
+
+### Wait for App to Load
+The app should load in less than 5 seconds.
+![](doc/img/unity-app.png)
+
+The screen will turn black as the headset adjusts to the THETA V input.
+
+### Put Headset On and Enjoy Telepresence
+
+![](doc/img/app-screenshot.png)
+
+
+
+
+
 
 ## Update RICOH THETA V Live Streaming Driver
 You need 1.0.1 or later. Earlier versions will not work. See [this](https://community.theta360.guide/t/solved-unity-cant-display-theta-v-live-stream-on-windows-10/1688/39) article for info. Note how Ricoh updated the driver is response to our community feedback. :-)  
