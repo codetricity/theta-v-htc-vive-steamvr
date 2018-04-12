@@ -29,6 +29,10 @@ These techniques are compiled from the theta360.guide community in the
 any questions or would like to tell us about your project
 please join this free and independent community of developers.  We'd love to hear from you.
 
+![](doc/img/htc-vive-theta-gear.png)
+
+Communications gear for the next gen! Join us.
+
 ## Software Used in This Test
 
 Tests were done with the following:
@@ -57,7 +61,7 @@ Unity.
 
 
 
-## Quick Tests Without Installing Unity
+## Quick Test Without Installing Unity
 This is a skeleton project for
 developers using Unity and is not intended for use as a binary.
 If you want to check it out quickly, I 
