@@ -3,20 +3,43 @@
 Sample project for using RICOH THETA HTC Vive with SteamVR for telepresence applications.
 ![](doc/img/thetav-in-game-screenshot.png)
 
-The 4K video stream from the THETA V will appear in HTC headset. 
-
-## Controllers
-With the default SteamVR features, you can do the following:
-
-- track both controllers inside of the headset. Position is accurate
-- take screenshots from inside of the headset using the controller buttons
-
-![](doc/img/htc-vive-screenshot.png)
-
-I am not using the controllers to grab anything right now.
+Display the 4K video stream from a THETA V inside a HTC Vive headset. 
 
 
-## Thanks
+## Overview
+The RICOH THETA is the world's most popular 360 camera. The THETA V model was released in late 2017. The "V" outputs a 4K equirectangular video stream with H264 compression 3840×1920/29.97fps as well as a 2K 1920x960/29.97 stream.
+
+You can easily use a Unity webcam texture to wrap
+the THETA V 4K video stream onto a sphere to provide a telepresence experience for industrial or
+experiential applications.
+
+This test application is illustrates the following techniques:
+
+- identify THETA V camera inside of Unity
+- assign THETA V to a texture
+- use flip normals on a Blender sphere to display the webcam texture to the inside of the Sphere. The Blender sphere is imported into Unity
+- use negative scale values to solve *mirroring* problem of objects in sphere appearing in reverse
+- display THETA V stream inside of a HTC Vive headset with SteamVR
+- track head movements and controller movements with SteamVR
+- use THETA V as a microphone and output audio to HTC Vive
+- initial configuration tests to orient the headset and the camera to simulate real-world telepresence
+
+These techniques are compiled from the theta360.guide community in the 
+[Unity Development discussion conference](https://community.theta360.guide/c/theta-media/unity-development). If you have 
+any questions or would like to tell us about your project
+please join this free and independent community of developers.  We'd love to hear from you.
+
+## Software Used in This Test
+
+Tests were done with the following:
+
+- Unity 2017.4.0f1 (earlier version should work)
+  - [SteamVR Plugin for Unity](https://assetstore.unity.com/packages/templates/systems/steamvr-plugin-32647)
+- [RICOH THETA V](https://theta360.com/en/about/theta/v.html)
+  - RICOH THETA V firmware 2.11.1 (or higher)
+- [RICOH THETA V live streaming driver 1.0.1](https://theta360.com/en/support/faq/c_06_v/304_1/) 64 bit  - You NEED 1.0.1 or higher to work with Unity
+
+## Thanks and Credits
 Thanks to the great community of contributors at theta360.guide. 
 
 Special thanks to Ricoh for working with the independent development community and updating the THETA V live streaming driver to work with Unity.
@@ -28,19 +51,44 @@ Additional credits:
 - [DrustZ](https://community.theta360.guide/u/DrustZ) for the initial hack of the THETA S registry that led to [ZimmerMegan](https://community.theta360.guide/u/zimmermegan/summary) getting Unity to work with the THETA V. This led to Ricoh updating the driver.
 - [joshapplman](https://community.theta360.guide/u/joshappleman/summary) for the technique of using negative scale to reverse the mirroring effect inside of the sphere
 
-## Use
-Note that this is obviously a skeleton project for
-developers and is not intended for use as a binary.
-However, if you want to check it out quickly, I 
-have included a binary in the directory `release`. There is a Windows 10 64 bit executable. Double click on it.
+- [Nima](https://community.theta360.guide/u/nima/summary) for the technique to use the THETA V microphones with 
+Unity.
+
+
+
+
+## Quick Tests Without Installing Unity
+This is a skeleton project for
+developers using Unity and is not intended for use as a binary.
+If you want to check it out quickly, I 
+have included a binary in the directory `release`.  If you don't want to download the entire repo, it may be easier for you to download zipped package from the [releases section of GitHub](https://github.com/codetricity/theta-v-htc-vive-steamvr/releases). The release file is 15.2MB.
+
+
+![](doc/img/download-binary.png)
+
+Extract the file. There should be a Windows 10 64 bit executable with a green THETA logo. 
+
+![](doc/img/app-binary.png)
 
 ### Turn on THETA V in Live Streaming Mode
 
+To simulate the perspective a standing person, put the
+THETA V on a tripod at eye level. Connect the THETA V
+with a USB cable and put it into live streaming mode.
+
 ![](doc/img/thetav-livestream.jpg)
+
+
 
 ### Connect HTC Vive to Your Computer
 
 ![](doc/img/htc-vive-connection.png)
+
+## Align Camera and Headset
+The HTC Vive default position is pointed in the same direction as the rear THETA V camera lense. The rear lense is the one that is facing away from the shutter button. A person talking directly to the rear lense will appear to be talking to the face of the person wearing the HTC Vive headset.
+
+![](doc/img/vive-theta-alignment.png)
+
 
 ### Start SteamVR
 
@@ -48,9 +96,11 @@ have included a binary in the directory `release`. There is a Windows 10 64 bit 
 
 ### Start Application on Windows
 
-Double-click on __theta_v_htc_vive_test.ext__ on your Windows 10 computer.
+Double-click on __theta_v_htc_vive_test.exe__ on your Windows 10 computer.
 
-![](doc/img/app-binary.png)
+![](doc/img/binary-click-me.png)
+
+
 
 ### Wait for App to Load
 
@@ -64,6 +114,26 @@ The screen will turn black as the headset adjusts to the THETA V input.
 
 ![](doc/img/app-screenshot.png)
 
+
+
+## Controllers
+With the default SteamVR features, you can do the following:
+
+- track both controllers inside of the headset. Position is accurate
+- take screenshots from inside of the headset using the controller buttons
+
+![](doc/img/htc-vive-screenshot.png)
+
+I am not using the controllers to grab anything right now.
+
+
+## Audio
+
+The script will use the first audio device it finds. Adjust this line in the code to properly identify the THETA V. The script will display the connected 
+microphones to the debug console of Unity.
+
+
+	public const int THETA_V_AUDIO_NUMBER = 0;   
 
 
 
@@ -97,7 +167,7 @@ I needed to rotate the X axis of the SteamVR rig by 180 degrees in order to get 
 
 ## Specifying the Correct RICOH THETA V driver
 
-You will need to modify the script to detect the webcam on your system.  By default, the script
+The script should automatically detect the webcams on your system.  By default, the script
 will look for `RICOH THETA V 4K`. If you want to use a different resolution or a different
 driver, you will need to modify the script. 
 
@@ -110,10 +180,17 @@ to your computer for debugging.
 
 ## Height of THETA V
 
-Right now, the height of the scene and the height of 
-the THETA V are not matched to provide a good 
-telepresence experience. I'll run more tests in the 
-future.
+Put the bottom of the THETA V at eye level for a 
+telepresence experience that is close the real
+world. If the camera is at eye level, the person you are talking to should
+be face the lense that is opposite the shutter
+button. 
+
+Alternately, you can change the perspective to
+a surreal experience. Several people wearing the headset have mentioned
+that they like it when the THETA V is close to the ground
+as they feel like a small animal.
+
 
 ## Fun 
 
@@ -126,13 +203,5 @@ gave out at CES.
 
 ![](doc/img/testing-fun2.png)
 
-## Software Used in This Test
 
-Tests were done with the following:
-
-- Unity 2017.4.0f1 (earlier version should work)
-  - [SteamVR Plugin for Unity](https://assetstore.unity.com/packages/templates/systems/steamvr-plugin-32647)
-- [RICOH THETA V](https://theta360.com/en/about/theta/v.html)
-  - RICOH THETA V firmware 2.11.1 (or higher)
-- [RICOH THETA V live streaming driver 1.0.1](https://theta360.com/en/support/faq/c_06_v/304_1/) 64 bit  - You NEED 1.0.1 or higher to work with Unity
 
