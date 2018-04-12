@@ -13,7 +13,7 @@ You can easily use a Unity webcam texture to wrap
 the THETA V 4K video stream onto a sphere to provide a telepresence experience for industrial or
 experiential applications.
 
-This test application is illustrates the following techniques:
+This test application illustrates the following techniques:
 
 - identify THETA V camera inside of Unity
 - assign THETA V to a texture
