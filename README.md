@@ -139,7 +139,7 @@ microphones to the debug console of Unity.
 
 	public const int THETA_V_AUDIO_NUMBER = 0;   
 
-
+As of April 13, 2018, the THETA V will only stream a single audio channel. You can save 4 channel spatial audio to a file, but right now only one audio channel will stream to your headset.
 
 
 
